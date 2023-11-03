@@ -11,21 +11,21 @@
  * If no common ancestor was found, return NULL.
  */
 binary_tree_t *binary_trees_ancestor(
-    const binary_tree_t *first, const binary_tree_t *second)
+	const binary_tree_t *first, const binary_tree_t *second)
 {
-    binary_tree_t *first_ptr = (binary_tree_t *)first;
-    binary_tree_t *second_ptr = (binary_tree_t *)second;
+	binary_tree_t *first_ptr = (binary_tree_t *)first;
+	binary_tree_t *second_ptr = (binary_tree_t *)second;
 
-    while (first_ptr != NULL)
-    {
-        while (second_ptr != NULL)
-        {
-            if (first_ptr == second_ptr)
-                return (first_ptr);
-            second_ptr = second_ptr->parent;
-        }
-        second_ptr = (binary_tree_t *)second;
-        first_ptr = first_ptr->parent;
-    }
-    return (NULL);
+	while (first_ptr != NULL)
+	{
+		while (second_ptr != NULL)
+		{
+			if (first_ptr == second_ptr)
+				return (first_ptr);
+			second_ptr = second_ptr->parent;
+		}
+		second_ptr = (binary_tree_t *)second;
+		first_ptr = first_ptr->parent;
+	}
+	return (NULL);
 }
